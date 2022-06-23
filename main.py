@@ -9,7 +9,7 @@ from douyin import Douyin
 from util import logger
 
 
-def generate_archive_md(searches, stars, lives, musics, brands):
+def generate_archive_md(searches):
     """生成今日readme
     """
     def search(item):
@@ -36,7 +36,7 @@ def generate_archive_md(searches, stars, lives, musics, brands):
     return readme
 
 
-def generate_readme(searches, stars, lives, musics, brands):
+def generate_readme(searches):
     """生成今日readme
     """
     def search(item):
@@ -174,10 +174,10 @@ def run():
 
 
     # 最新数据
-    todayMd = generate_readme(searches, stars, lives, musics, brands)
+    todayMd = generate_readme(searches)
     save_readme(todayMd)
     # 归档
-    archiveMd = generate_archive_md(searches, stars, lives, musics, brands)
+    archiveMd = generate_archive_md(searches)
     save_archive_md(archiveMd)
 
 
