@@ -168,6 +168,8 @@ def save_archive_md(md):
     file = os.path.join('archives', name)
     util.write_text(file, md)
 
+def current_time():
+    return datetime.now().astimezone().strftime('%Y-%m-%d %H:%M:%S %z')
 
 def save_raw_response(resp: Response, filename: str):
     """保存原始响应内容
@@ -175,7 +177,7 @@ def save_raw_response(resp: Response, filename: str):
     if resp:
         content = resp.text
         
-        filename = '{}.json'.format(datetime.now().astimezone().strftime('%Y-%m-%d %H:%M:%S %z'))
+        filename = '{}.json'.format(current_time()
         logger.info('save response:%s', filename)
         date = util.current_date()
         file = os.path.join('raw', date, filename)
