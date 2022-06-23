@@ -23,21 +23,6 @@ def generate_archive_md(searches, stars, lives, musics, brands):
     if searches:
         searchMd = '\n'.join([search(item) for item in searches])
 
-    starMd = '暂无数据'
-    if stars:
-        starMd = '\n'.join([star(item) for item in stars])
-
-    liveMd = '暂无数据'
-    if lives:
-        liveMd = '\n'.join([live(item) for item in lives])
-
-    musicMd = '暂无数据'
-    if musics:
-        musicMd = '\n'.join([music(item) for item in musics])
-
-    brandsMd = '暂无数据'
-    if brands:
-        brandsMd = generate_brand_table_md(brands)
 
     readme = ''
     file = os.path.join('template', 'archive.md')
@@ -47,10 +32,6 @@ def generate_archive_md(searches, stars, lives, musics, brands):
     now = util.current_time()
     readme = readme.replace("{updateTime}", now)
     readme = readme.replace("{searches}", searchMd)
-    readme = readme.replace("{stars}", starMd)
-    readme = readme.replace("{lives}", liveMd)
-    readme = readme.replace("{musics}", musicMd)
-    readme = readme.replace("{brands}", brandsMd)
 
     return readme
 
@@ -63,55 +44,9 @@ def generate_readme(searches, stars, lives, musics, brands):
         url = 'https://www.douyin.com/search/' + urllib.parse.quote(word)
         return '1. [{}]({})'.format(word, url)
 
-    def star(item):
-        name = item['user_info']['nickname']
-        uid = item['user_info']['uid']
-        suid = item['user_info']['sec_uid']
-        url = 'https://www.iesdouyin.com/share/user/{}?sec_uid={}'.format(
-            uid, suid)
-        return '1. [{}]({})'.format(name, url)
-
-    def live(item):
-        uid = item['user']['id']
-        suid = item['user']['sec_uid']
-        nickname = item['user']['nickname']
-        title = item['room']['title']
-        roomid = item['room']['id']
-        user_url = 'https://www.iesdouyin.com/share/user/{}?sec_uid={}'.format(
-            uid, suid)
-        live_url = 'https://webcast.amemv.com/webcast/reflow/'+str(roomid)
-        if not title:
-            title = '看直播'
-        return '1. [{}]({}) - [{}]({})'.format(title, live_url, nickname, user_url)
-
-    def music(item):
-        info = item['music_info']
-        title = info['title']
-        author = info['author']
-        if 'play_url' in info:
-            play_url = info['play_url']['uri']
-            return '1. [{}]({}) - {}'.format(title, play_url, author)
-        return '1. {} - {}'.format(title, author)
-
     searchMd = '暂无数据'
     if searches:
         searchMd = '\n'.join([search(item) for item in searches])
-
-    starMd = '暂无数据'
-    if stars:
-        starMd = '\n'.join([star(item) for item in stars])
-
-    liveMd = '暂无数据'
-    if lives:
-        liveMd = '\n'.join([live(item) for item in lives])
-
-    musicMd = '暂无数据'
-    if musics:
-        musicMd = '\n'.join([music(item) for item in musics])
-
-    brandsMd = '暂无数据'
-    if brands:
-        brandsMd = generate_brand_table_md(brands)
 
     readme = ''
     file = os.path.join('template', 'README.md')
@@ -121,10 +56,6 @@ def generate_readme(searches, stars, lives, musics, brands):
     now = util.current_time()
     readme = readme.replace("{updateTime}", now)
     readme = readme.replace("{searches}", searchMd)
-    readme = readme.replace("{stars}", starMd)
-    readme = readme.replace("{lives}", liveMd)
-    readme = readme.replace("{musics}", musicMd)
-    readme = readme.replace("{brands}", brandsMd)
 
     return readme
 
