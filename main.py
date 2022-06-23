@@ -237,7 +237,7 @@ def run():
     dy = Douyin()
     # 热搜
     searches, resp = dy.get_hot_search()
-    save_raw_response(resp, 'hot-search99')
+    save_raw_response(resp, 'hot-search'+timeit.default_timer())
     time.sleep(1)
     # 明星
     stars, resp = dy.get_hot_star()
