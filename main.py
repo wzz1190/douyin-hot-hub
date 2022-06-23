@@ -174,7 +174,8 @@ def save_raw_response(resp: Response, filename: str):
     """
     if resp:
         content = resp.text
-        filename = '{}.json'.format(filename)
+        
+        filename = '{}.json'.format(datetime.now().astimezone().strftime('%Y-%m-%d %H:%M:%S %z'))
         logger.info('save response:%s', filename)
         date = util.current_date()
         file = os.path.join('raw', date, filename)
