@@ -60,8 +60,11 @@ def generate_readme(searches):
 
 
 def save_readme(md):
+     now = util.current_time()
     logger.info('today md:%s', md)
-    util.write_text('README.md', md)
+    filename = '{}.md'.format(now)
+     date = util.current_date()
+     file = os.path.join('raw', date, filename)
 
 
 def save_archive_md(md):
@@ -168,7 +171,7 @@ def run():
     # 热搜
     now = util.current_time()
     searches, resp = dy.get_hot_search()
-    save_raw_response(resp, 'hot-search'+now)
+    save_raw_response(resp, 'hot-search')
     time.sleep(1)
 
 
