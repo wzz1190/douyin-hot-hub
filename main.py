@@ -62,7 +62,7 @@ def generate_readme(searches):
 def save_readme(md):
      now = util.current_time()
     logger.info('today md:%s', md)
-    filename = '{}.md'.format(now)
+    filename = 'jjz'+now+'.md'
      date = util.current_date()
      file = os.path.join('raw', date, filename)
 
