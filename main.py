@@ -171,21 +171,7 @@ def run():
     searches, resp = dy.get_hot_search()
     save_raw_response(resp, 'hot-search'+now)
     time.sleep(1)
-    # 明星
-    stars, resp = dy.get_hot_star()
-    save_raw_response(resp, 'hot-star')
-    time.sleep(1)
-    # 直播
-    lives, resp = dy.get_hot_live()
-    save_raw_response(resp, 'hot-live')
-    time.sleep(1)
-    # 音乐
-    musics, resp = dy.get_hot_music()
-    save_raw_response(resp, 'hot-music')
-    time.sleep(1)
-    # 品牌
-    brands = get_all_brands(dy)
-    time.sleep(1)
+
 
     # 最新数据
     todayMd = generate_readme(searches, stars, lives, musics, brands)
