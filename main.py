@@ -54,8 +54,7 @@ def generate_readme(searches):
         readme = f.read()
 
     now = util.current_time()
-    readme = readme.replace("{updateTime}", now)
-    readme = readme.replace("{searches}", searchMd)
+    readme = readme+searchMd
 
     return readme
 
