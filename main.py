@@ -15,7 +15,7 @@ def generate_archive_md(searches):
     def search(item):
         word = item['word']
         url = 'https://www.douyin.com/search/' + urllib.parse.quote(word)
-        return '1. [{}]({})'.format(word, url)
+        return '1. [{}]'.format(word)
 
 
 
@@ -42,7 +42,7 @@ def generate_readme(searches):
     def search(item):
         word = item['word']
         url = 'https://www.douyin.com/search/' + urllib.parse.quote(word)
-        return '1. [{}]({})'.format(word, url)
+        return '1. [{}]'.format(word)
 
     searchMd = '暂无数据'
     if searches:
@@ -109,7 +109,6 @@ def run():
     # 热搜
     now = util.current_time()
     searches, resp = dy.get_hot_search()
-    save_raw_response(resp, 'hot-search')
     time.sleep(1)
 
 
