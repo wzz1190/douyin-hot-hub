@@ -73,8 +73,7 @@ def redmd():
      with open(dirs) as f:
             readme = f.read()   
             readmes = readmes + readme
-            filee = os.path.join('archives', 'guagua.md')
-            util.write_text(filee, readmes)
+            util.write_text('README.md', readmes)
 
 def save_readme(md):
     
