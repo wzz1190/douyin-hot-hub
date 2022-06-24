@@ -60,18 +60,7 @@ def generate_readme(searches):
 
 def redmd()
     now = util.current_time()
-    files = os.path.join('raw', now)
-    g = os.walk(files)
-    readme = ''
-    readmes = ''
-    for path,dir_list,file_list in g:  
-          for file_name in file_list: 
-              file=(os.path.join(path, file_name) 
-               with open(file) as f:
-                   readme = f.read()
-               readmes=readmes+readme
-               filee = os.path.join('archives', 'guagua.md')
-               util.write_text(filee, readmes)
+
 
 def save_readme(md):
     
