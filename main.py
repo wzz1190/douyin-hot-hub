@@ -62,8 +62,8 @@ def redmd():
     now = util.current_time()
     files = os.path.join('raw', now)
     g = os.walk(files)
-    logger.info（g）
-
+    logger.info(g)
+    
 
 def save_readme(md):
     
