@@ -70,7 +70,8 @@ def redmd():
     readmes = ''
     for dirs in g:  
      logger.info(dirs)
-    
+     with open(file) as f:
+            readme = f.read()
 
 def save_readme(md):
     
