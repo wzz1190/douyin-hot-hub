@@ -65,8 +65,8 @@ def getFiles(path, suffix):
 def redmd():
     now = util.current_date()
     files = os.path.join(os.getcwd(),'raw', now)
-    g = os.walk(files)
-    logger.info(g)
+    mdss = getFiles(files,'md')
+    logger.info(mdss)
     
 
 def save_readme(md):
