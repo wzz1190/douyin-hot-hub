@@ -88,7 +88,13 @@ def save_archive_md(md):
     logger.info('archive md:%s', md)
     name = util.current_date()+'.md'
     file = os.path.join('archives', name)
-    util.write_text(file, md)
+    files = os.path.join('README.md')
+    readme = ''
+    with open('README.md') as f:
+        readme = f.read()
+
+    
+    util.write_text(file, readme)
 
 def save_raw_response(resp: Response, filename: str):
     """保存原始响应内容
