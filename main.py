@@ -70,7 +70,7 @@ def redmd():
     readmes = ''
     for dirs in g:  
      logger.info(dirs)
-     with open(file) as f:
+     with open(dirs) as f:
             readme = f.read()   
             readmes = readmes + readme
             filee = os.path.join('archives', 'guagua.md')
