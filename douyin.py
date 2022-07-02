@@ -7,7 +7,7 @@ from urllib3.util.retry import Retry
 
 from util import logger
 
-HOT_SEARCH_URL = 'https://aweme.snssdk.com/aweme/v1/hot/search/list/'
+HOT_SEARCH_URL = 'https://aweme.snssdk.com/aweme/v1/hot/search/list/?detail_list=1'
 HOT_STAR_URL = 'https://aweme.snssdk.com/aweme/v1/hotsearch/star/billboard/'
 HOT_LIVE_URL = 'https://webcast.amemv.com/webcast/ranklist/hot/'
 BRAND_CATEGORY_URL = 'https://aweme.snssdk.com/aweme/v1/hotsearch/brand/category/'
