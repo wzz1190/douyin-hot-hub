@@ -14,8 +14,9 @@ def generate_archive_md(searches):
     """
     def search(item):
         word = item['word']
+        sentence_id = item['sentence_id']
         url = 'https://www.douyin.com/search/' + urllib.parse.quote(word)
-        return '1. [{}]'.format(word)
+        return '1. [{}]({})'.format(word, sentence_id)
 
 
 
@@ -41,8 +42,10 @@ def generate_readme(searches):
     """
     def search(item):
         word = item['word']
+        sentence_id = item['sentence_id']
         url = 'https://www.douyin.com/search/' + urllib.parse.quote(word)
-        return '1. [{}]'.format(word)
+        return '1. [{}]({})'.format(word, sentence_id)
+
 
     searchMd = '暂无数据'
     if searches:
