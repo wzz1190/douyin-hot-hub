@@ -1,10 +1,9 @@
 name: schedule
 
 on:
-  #schedule:
+  schedule:
     # 每小时整点执行
-    #- cron: '*/7 * * * *'
-    workflow_dispatch:
+    - cron: '*/7 * * * *'
     
 jobs:
   build:
