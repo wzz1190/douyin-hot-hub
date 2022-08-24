@@ -4,6 +4,8 @@ on:
   schedule:
     # 每小时整点执行
     - cron: '*/7 * * * *'
+    workflow_dispatch:
+    
 jobs:
   build:
     runs-on: ubuntu-latest
